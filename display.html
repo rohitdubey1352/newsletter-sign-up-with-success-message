@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+  <!-- Success message start -->
+<section class="main_div">
+    <div class="container">
+        <div class="box2">
+            <img src="./assets/images/icon-success.svg" alt="success" />
+            <h2>
+                Thanks for subscribing!
+            </h2>
+        
+            <p>
+                A confirmation email has been sent to <span id="displayValue"></span>. 
+                Please open it and click the button inside to confirm your subscription.
+            </p>
+            
+            <a href="./index.html" class="btn">
+                Dismiss message
+            </a>
+        
+        </div>
+    </div>
+
+</section>
+
+    <script>
+      // Retrieve the input value from the previous form
+      var urlParams = new URLSearchParams(window.location.search);
+      var inputValue = urlParams.get('emailid');
+  
+      // Display the input value on the page
+      var displayElement = document.getElementById('displayValue');
+      displayElement.textContent = inputValue;
+    </script>
+
+  <!-- Success message end -->
+
+</body>
+</html>

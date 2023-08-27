@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Newsletter sign-up</title>
+  <link rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+
+<section class="main_div">
+  <div class="container">
+    <div class="box">
+    
+      <div class="left_container">
+        <h2>
+          Stay updated!
+        </h2>
+        <p class="firstPara">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+
+        <div class="Listgroups">
+          <div class="list">
+            <img src="./assets/images/icon-list.svg" alt="img1" />
+            <p>
+              Product discovery and building what matters
+            </p>
+          </div>
+          <div class="list">
+            <img src="./assets/images/icon-list.svg" alt="img1" />
+            <p>
+              Measuring to ensure updates are a success
+            </p>
+          </div>
+          <div class="list">
+            <img src="./assets/images/icon-list.svg" alt="img1" />
+            <p>
+              And much more!
+            </p>
+          </div>
+        </div>
+
+        <form id="myForm">
+          <p>Email address</p>
+          <input type="email" name="emailid" id="emailid" placeholder="email@company.com" />
+          <span id="email_error"></span>
+          <button class="btn" value="submit" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+
+      </div>
+
+      <div class="Right_container">
+        <div class="img"></div>
+      </div>
+    
+    </div>
+  </div>
+
+
+</section>
+ 
+<script>
+
+//for getting Valid email required message script...
+
+    const emailInput = document.getElementById("emailid");
+    const emailError = document.getElementById("email_error");
+
+    emailInput.addEventListener("input", function(event) {
+      if (!emailInput.checkValidity()) {
+        emailError.textContent = "Valid email required";
+      } else {
+        emailError.textContent = "";
+      }
+    });
+
+    // function clickOn(){
+    //   const userID = document.getElementById('emailid').value;
+    //   alert(userID);
+
+    // }
+
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var inputValue = document.getElementById('emailid').value;
+
+        // Redirect to the display.html page with the input value as a query parameter
+        window.location.href = 'display.html?emailid=' + encodeURIComponent(inputValue);
+    });
+
+
+</script>
+
+
+  <!-- Sign-up form end -->
+  
+</body>
+</html>
